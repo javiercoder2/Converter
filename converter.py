@@ -7,7 +7,7 @@ import PySimpleGUI as sg
 layout = [
     [
         sg.Input(key = 'Input'),
-        sg.Spin(['km to meters','kg to grams','sec to min','meters to seconds', 'grams to kgs','mins to sec'], key = 'Units'), 
+        sg.Spin(['km to meters','kg to grams','sec to min','meters to kms', 'grams to kgs','mins to sec'], key = 'Units'), 
         sg.Button('Convert', key = 'Convert')
     ],
     [sg.Text('Output', key = 'Output')]
@@ -39,8 +39,8 @@ while True:
                 case 'sec to min':
                     output = round(float(input_value) / 60,2)
                     output_string = f'{input_value} seconds are {output} minutes.'
-                case 'meters to seconds':
-                    output = round(float(input_value) / 0.01,2)
+                case 'meters to kms':
+                    output = round(float(input_value) / 100,2)
                     output_string = f'{input_value} meters are {output} kms.'
                 case 'grams to kgs':
                     output = round(float(input_value) / 0.0,2)
